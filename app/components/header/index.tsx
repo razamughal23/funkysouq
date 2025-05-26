@@ -1,5 +1,5 @@
 "use client";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Link } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { styles } from "./styles";
 import NestedDropdown from "../nestedDropdown";
@@ -14,12 +14,19 @@ const Header = () => {
   }, [cart]);
   return (
     <Container sx={styles.MainContainer}>
-      <Grid container size={12}>
-        <Grid size={{ xs: 12, sm: 6 }}>
+      <Grid
+        container
+        size={11}
+        sx={{ margin: "auto", display: "flex", alignItems: "center" }}
+      >
+        <Grid size={{ xs: 6, sm: 6 }}>
           <NestedDropdown />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
+        <Grid size={{ xs: 6, sm: 6 }}>
           <span>🛒 Cart: {count}</span>
+          <Link href="/cart" sx={{ marginLeft: "10px" }}>
+            <span>Open Cart</span>
+          </Link>
         </Grid>
       </Grid>
     </Container>
