@@ -6,6 +6,7 @@ import Image5 from "../public/women-dresses-1.jpg";
 import Image6 from "../public/women-dresses-2.jpg";
 import Image7 from "../public/women-skirts-1.jpg";
 import Image8 from "../public/women-skirts-2.avif";
+
 export const Header_data = [
   {
     id: 1,

@@ -1,24 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import NextLink from "next/link";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Menu, MenuItem, Box } from "@mui/material";
 import { Header_data } from "../../../static-data/index";
 
 const NestedDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [subMenus, setSubMenus] = useState<
-    Record<number, { anchorEl: HTMLElement; open: boolean }>
+    Record<number, { anchorEl: HTMLElement | null; open: boolean }>
   >({});
-
   const handleMainMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleMainMenuClose = () => {
     setAnchorEl(null);
     setSubMenus({});
   };
-
   const handleSubMenuOpen = (
     event: React.MouseEvent<HTMLElement>,
     id: number
@@ -28,7 +25,6 @@ const NestedDropdown = () => {
       [id]: { anchorEl: event.currentTarget, open: true },
     }));
   };
-
   const handleSubMenuClose = (id: number) => {
     setSubMenus((prev) => ({
       ...prev,
@@ -36,29 +32,19 @@ const NestedDropdown = () => {
     }));
   };
 
-  const renderMenuItems = (items: any[]) => {
-    return items.map((item) => {
+  const renderMenuItems = (items: any[]) =>
+    items.map((item) => {
       const hasChildren = item.children?.length > 0;
-
       return (
-        <div key={item.id}>
-          {hasChildren ? (
-            <MenuItem
-              onMouseEnter={(e) => handleSubMenuOpen(e, item.id)}
-              onMouseLeave={() => handleSubMenuClose(item.id)}
-            >
-              {item.name}
-            </MenuItem>
-          ) : (
-            <MenuItem
-              component={NextLink}
-              href={item.link || "#"}
-              onClick={handleMainMenuClose}
-            >
-              {item.name}
-            </MenuItem>
-          )}
-
+        <Box key={item.id} onMouseLeave={() => handleSubMenuClose(item.id)}>
+          <MenuItem
+            onMouseEnter={(e) => hasChildren && handleSubMenuOpen(e, item.id)}
+            component={!hasChildren ? NextLink : undefined}
+            href={!hasChildren ? item.link || "#" : undefined}
+            onClick={!hasChildren ? handleMainMenuClose : undefined}
+          >
+            {item.name}
+          </MenuItem>
           {hasChildren && (
             <Menu
               anchorEl={subMenus[item.id]?.anchorEl}
@@ -66,22 +52,20 @@ const NestedDropdown = () => {
               onClose={() => handleSubMenuClose(item.id)}
               anchorOrigin={{ vertical: "top", horizontal: "right" }}
               transformOrigin={{ vertical: "top", horizontal: "left" }}
-              MenuListProps={{
-                onMouseEnter: () =>
-                  handleSubMenuOpen(
-                    { currentTarget: subMenus[item.id]?.anchorEl } as any,
-                    item.id
-                  ),
-                onMouseLeave: () => handleSubMenuClose(item.id),
-              }}
+              // MenuListProps={{
+              //   onMouseEnter: (e) =>
+              //     handleSubMenuOpen(
+              //       { currentTarget: subMenus[item.id]?.anchorEl! } as any,
+              //       item.id
+              //     ),
+              // }}
             >
               {renderMenuItems(item.children)}
             </Menu>
           )}
-        </div>
+        </Box>
       );
     });
-  };
 
   return (
     <div>
@@ -92,6 +76,7 @@ const NestedDropdown = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMainMenuClose}
+        MenuListProps={{ onMouseLeave: handleMainMenuClose }}
       >
         {renderMenuItems(Header_data)}
       </Menu>
