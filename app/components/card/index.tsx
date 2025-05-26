@@ -53,14 +53,7 @@ const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
         >
           Add to Cart
         </Button>
-        {/* <Button
-          size="small"
-          onClick={() => removeFromCart(product.id)}
-          sx={{ ...styles.button, background: "red" }}
-        >
-          Remove from Cart
-        </Button> */}
-        <Link href={`product-details/${slug}`}>
+        <Link href={`/product-details/${slug}`}>
           <Button
             size="small"
             sx={{ ...styles.button, background: "lightgrey" }}

@@ -2,13 +2,13 @@
 import { Container, Grid } from "@mui/material";
 import React from "react";
 import ProductCard from "../../../components/card";
-import { women_Dresses_Data } from "../../../../static-data";
+import { Women_Dresses_Data } from "../../../../static-data";
 
 const Index = () => {
   return (
     <Container>
       <Grid container size={12} gap={1}>
-        {women_Dresses_Data?.map((item: any, index) => {
+        {Women_Dresses_Data?.map((item: any, index) => {
           return (
             <Grid size={{ xs: 12, md: 5.9 }} key={`${item.id}-${index}`}>
               <ProductCard

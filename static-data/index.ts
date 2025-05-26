@@ -33,12 +33,14 @@ export const Header_data = [
 ];
 export const Men_Shirt_Data = [
   {
+    id: 4790,
     name: "Mens Casual Premium Slim Fit",
     price: "$22.3",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     img: Image1,
   },
   {
+    id: 2684,
     name: "Mens Casual Slim Fit",
     price: "$15.99",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -61,7 +63,7 @@ export const Men_Pent_Data = [
     img: Image4,
   },
 ];
-export const women_Dresses_Data = [
+export const Women_Dresses_Data = [
   {
     id: 1599,
     name: "MBJ Women's Solid Short Sleeve Boat",
@@ -70,7 +72,7 @@ export const women_Dresses_Data = [
     img: Image5,
   },
   {
-    id: 2,
+    id: 2389,
     name: "Opna Women's Short Sleeve Moisture",
     price: "$7.95",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -86,7 +88,7 @@ export const Women_Skirt_Data = [
     img: Image7,
   },
   {
-    id: 23434,
+    id: 2344,
     name: "Brown Short Skirt",
     price: "$29.65",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

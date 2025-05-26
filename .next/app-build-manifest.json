@@ -31,6 +31,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/clothing/men/shirts/page.js"
     ],
+    "/clothing/men/pants/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/clothing/men/pants/page.js"
+    ],
+    "/product-details/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/product-details/[id]/page.js"
+    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

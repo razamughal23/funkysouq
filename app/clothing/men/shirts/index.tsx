@@ -12,7 +12,7 @@ const Index = () => {
           return (
             <Grid size={{ xs: 12, md: 5.9 }} key={`${item.id}-${index}`}>
               <ProductCard
-                slug={item.name}
+                slug={item.id}
                 image={item?.img}
                 title={item?.name}
                 desc={item?.desc}
