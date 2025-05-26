@@ -1,0 +1,76 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Link,
+  Typography,
+} from "@mui/material";
+import React from "react";
+import ImageDiv from "../imageDiv";
+import { styles } from "./styles";
+import useCartStore from "../../zustandStore";
+interface props {
+  id?: any;
+  image: any;
+  title: any;
+  desc: any;
+  price: any;
+  slug: any;
+}
+const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
+  const { addToCart, removeFromCart } = useCartStore();
+  const product = {
+    id,
+    title,
+    price,
+    desc,
+    image,
+    slug,
+  };
+  return (
+    <Card>
+      <Box sx={{ height: 300, width: "100%" }}>
+        <ImageDiv src={image} alt={title} style={{ objectFit: "contain" }} />
+      </Box>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {price}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          {desc}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          size="small"
+          onClick={() => addToCart(product)}
+          sx={{ ...styles.button, background: "skyblue" }}
+        >
+          Add to Cart
+        </Button>
+        {/* <Button
+          size="small"
+          onClick={() => removeFromCart(product.id)}
+          sx={{ ...styles.button, background: "red" }}
+        >
+          Remove from Cart
+        </Button> */}
+        <Link href={`product-details/${slug}`}>
+          <Button
+            size="small"
+            sx={{ ...styles.button, background: "lightgrey" }}
+          >
+            Product Detail Page
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
+  );
+};
+
+export default ProductCard;

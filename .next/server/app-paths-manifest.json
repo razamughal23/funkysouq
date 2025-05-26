@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/clothing/women/skirts/page": "app/clothing/women/skirts/page.js",
+  "/clothing/women/dresses/page": "app/clothing/women/dresses/page.js",
+  "/cart/page": "app/cart/page.js"
+}
