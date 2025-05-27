@@ -14,14 +14,6 @@ import ImageDiv from "../components/imageDiv";
 
 const CartPage = () => {
   const { cart, removeFromCart, setQuantity } = useCartStore();
-  const totalAmount = cart.reduce((total, item) => {
-    const price =
-      typeof item.price === "string" ? parseFloat(item.price) : item.price;
-    const quantity = item.quantity ?? 1;
-
-    return total + price * quantity;
-  }, 0);
-  console.log("cart", totalAmount);
   return (
     <Container>
       <Box>
@@ -63,12 +55,12 @@ const CartPage = () => {
                         type="number"
                         size="small"
                         label="Quantity"
+                        fullWidth
                         value={item.quantity}
                         onChange={(e) =>
                           setQuantity(item.id, parseInt(e.target.value))
                         }
-                        sx={{ width: 100 }}
-                        inputProps={{ min: 1 }}
+                        sx={{ width: "100%" }}
                       />
                       <Button
                         variant="outlined"
@@ -92,7 +84,6 @@ const CartPage = () => {
               Total Items:{" "}
               {cart.reduce((total, item) => total + (item.quantity ?? 0), 0)}
             </Typography>
-            <Typography variant="h6">Total Price: ${totalAmount}</Typography>
           </Box>
         )}
       </Box>

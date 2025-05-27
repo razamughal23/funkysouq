@@ -24,7 +24,6 @@ const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
       cart: [],
-
       addToCart: (product) => {
         const existing = get().cart.find((item) => item.id === product.id);
         if (existing) {
@@ -50,7 +49,6 @@ const useCartStore = create<CartStore>()(
           .filter((item) => item.quantity! > 0);
         set({ cart: updated });
       },
-
       setQuantity: (productId, quantity) => {
         if (quantity <= 0) {
           set({ cart: get().cart.filter((item) => item.id !== productId) });

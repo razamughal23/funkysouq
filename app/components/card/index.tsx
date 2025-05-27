@@ -20,7 +20,7 @@ interface props {
   slug: any;
 }
 const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
-  const { addToCart, removeFromCart } = useCartStore();
+  const { removeFromCart } = useCartStore();
   const product = {
     id,
     title,
@@ -28,6 +28,20 @@ const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
     desc,
     image,
     slug,
+  };
+  console.log("Product", slug);
+
+  const addToCart = useCartStore((state) => state.addToCart);
+  const handleAdd = () => {
+    const product = {
+      id: slug.toString(),
+      title: title,
+      desc,
+      price: parseFloat(price.replace("$", "")),
+      image: image,
+      slug: title.toLowerCase().replace(/\s+/g, "-"),
+    };
+    addToCart(product);
   };
   return (
     <Card>
@@ -48,7 +62,8 @@ const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
       <CardActions>
         <Button
           size="small"
-          onClick={() => addToCart(product)}
+          // onClick={() => addToCart(product)}
+          onClick={handleAdd}
           sx={{ ...styles.button, background: "skyblue" }}
         >
           Add to Cart

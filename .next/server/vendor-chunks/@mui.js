@@ -11,53 +11,6 @@ exports.id = "vendor-chunks/@mui";
 exports.ids = ["vendor-chunks/@mui"];
 exports.modules = {
 
-/***/ "(rsc)/./node_modules/@mui/material/esm/Container/Container.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@mui/material/esm/Container/Container.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_server_dom_webpack_server_edge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-server-dom-webpack/server.edge */ "(rsc)/./node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-webpack-server-edge.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_server_dom_webpack_server_edge__WEBPACK_IMPORTED_MODULE_0__.registerClientReference)(
-function() { throw new Error("Attempted to call the default export of \"/Users/razamughal/Desktop/funkysouq/node_modules/@mui/material/esm/Container/Container.js\" from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component."); },
-"/Users/razamughal/Desktop/funkysouq/node_modules/@mui/material/esm/Container/Container.js",
-"default",
-));
-
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/@mui/material/esm/Typography/Typography.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@mui/material/esm/Typography/Typography.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   TypographyRoot: () => (/* binding */ TypographyRoot),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_server_dom_webpack_server_edge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-server-dom-webpack/server.edge */ "(rsc)/./node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-webpack-server-edge.js");
-
-const TypographyRoot = (0,react_server_dom_webpack_server_edge__WEBPACK_IMPORTED_MODULE_0__.registerClientReference)(
-function() { throw new Error("Attempted to call TypographyRoot() from the server but TypographyRoot is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component."); },
-"/Users/razamughal/Desktop/funkysouq/node_modules/@mui/material/esm/Typography/Typography.js",
-"TypographyRoot",
-);/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_server_dom_webpack_server_edge__WEBPACK_IMPORTED_MODULE_0__.registerClientReference)(
-function() { throw new Error("Attempted to call the default export of \"/Users/razamughal/Desktop/funkysouq/node_modules/@mui/material/esm/Typography/Typography.js\" from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component."); },
-"/Users/razamughal/Desktop/funkysouq/node_modules/@mui/material/esm/Typography/Typography.js",
-"default",
-));
-
-
-/***/ }),
-
 /***/ "(ssr)/./node_modules/@mui/material/esm/Backdrop/Backdrop.js":
 /*!*************************************************************!*\
   !*** ./node_modules/@mui/material/esm/Backdrop/Backdrop.js ***!
