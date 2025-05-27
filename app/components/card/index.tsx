@@ -19,18 +19,7 @@ interface props {
   price: any;
   slug: any;
 }
-const ProductCard = ({ image, title, desc, price, slug, id }: props) => {
-  const { removeFromCart } = useCartStore();
-  const product = {
-    id,
-    title,
-    price,
-    desc,
-    image,
-    slug,
-  };
-  console.log("Product", slug);
-
+const ProductCard = ({ image, title, desc, price, slug }: props) => {
   const addToCart = useCartStore((state) => state.addToCart);
   const handleAdd = () => {
     const product = {
