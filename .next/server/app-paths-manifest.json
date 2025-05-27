@@ -1,8 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
   "/clothing/men/pants/page": "app/clothing/men/pants/page.js",
-  "/clothing/women/skirts/page": "app/clothing/women/skirts/page.js",
   "/cart/page": "app/cart/page.js",
-  "/clothing/men/shirts/page": "app/clothing/men/shirts/page.js"
+  "/clothing/men/shirts/page": "app/clothing/men/shirts/page.js",
+  "/page": "app/page.js",
+  "/clothing/women/skirts/page": "app/clothing/women/skirts/page.js"
 }

@@ -19,7 +19,7 @@ const Index = () => {
           fontFamily={"var(--font-geist-mono)"}
           fontSize={{ xs: "20px", sm: "30px", md: "40px" }}
         >
-          This is the Assessment test for Funk Souq
+          This is the Assessment test for Funky Souq
         </Typography>
       </Grid>
     </Container>
